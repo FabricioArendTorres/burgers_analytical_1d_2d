@@ -10,7 +10,7 @@ Gao, Q., and M. Y. Zou. "An analytical solution for two and three dimensional no
 ## install
 Requirements for conda are in the `.yml` file.
 Else, you can just directly install the package with:
-`pip install -e .` while being in the root directory of this repo.
+`pip install -e .` while being in the `pde_datasets` directory of this repo.
 
 ## Burgers 1d
 ![Alt text](plots/burgers_1d.png?raw=true "Burgers 1D")
