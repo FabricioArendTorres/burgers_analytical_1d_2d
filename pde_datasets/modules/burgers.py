@@ -5,7 +5,7 @@ import mpmath as mpm
 from itertools import repeat
 from scipy.stats import qmc
 from tqdm import trange
-
+import numpy as np
 from pde_datasets.modules.problem_base import TimeDependentProblem
 from pde_datasets.utils.domains import *
 from pde_datasets.utils import util

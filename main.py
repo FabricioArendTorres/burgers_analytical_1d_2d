@@ -46,7 +46,7 @@ def fp():
 
     kde = KernelDensity(kernel='epanechnikov', bandwidth=0.005).fit(xt_solutions)
 
-    fig, axs = plt.subplots(1, 2, sharex="all", sharey="all")
+    fig, axs = plt.subplots(1, 2, sharex="all", sharey="all", figsize=(10,10))
     axs = axs.flatten()
     norm = mpl.colors.Normalize(vmin=y_grid.min(), vmax=y_grid.max())
 
@@ -93,7 +93,10 @@ def burgers_2d(time=0.25):
 
     ax.set_xlabel("x")
     ax.set_ylabel("y")
-    plt.savefig(f"burgers_2d_t{time:.2f}.png")
+
+    ax.elev = 35
+    ax.azim = -30
+    plt.savefig(f"plots/burgers_2d_t{time:.2f}.png")
 
 
 def burgers_1d():
@@ -120,7 +123,7 @@ def burgers_1d():
     # plt.title("u(t, x)")
     # # plt.plot(X, sol)
     # plt.show()
-    fig, axs = plt.subplots(3, 1)
+    fig, axs = plt.subplots(1, 3, figsize=(15,5))
     axs = axs.flatten()
 
     # for t in [1e-5, .1, .5, 1., 2., 3.]:
@@ -135,14 +138,12 @@ def burgers_1d():
         # vel = -2*burger.mu *  diff / potential[:-1]
         axs[1].plot(X[:-1], diff, label=t)
         axs[2].plot(X, burger.calc_qmc_solution(X, np.ones(X.shape[0]) * t, power_num_qmc=15, power_num_splits=0),
-                    label=t)
+                    label=f"t={t:.1f}")
     axs[0].set_title("Potential")
     axs[1].set_title("Diff Theta")
     axs[2].set_title("Solution u")
     handles, labels = axs[-1].get_legend_handles_labels()
-    for ax in axs:
-        ax.legend()
-    plt.tight_layout()
+    fig.legend(handles, labels, loc='center right')
     plt.savefig("plots/burgers_1d.png")
 
 
@@ -214,7 +215,7 @@ if __name__ == "__main__":
     print("burgers1d")
     burgers_1d()
     print("burgers2d")
-    [burgers_2d(time) for time in [0., 0.25, 0.5, 0.75, ]]
+    [burgers_2d(time) for time in [0., 0.25, 0.5, 0.75, 1.]]
     print("fokkerplanck")
     fp()
     print("heat3d")
