@@ -7,6 +7,11 @@ See `main.py` for an example on how to evaluate the solution on a spatiotemporal
 Burgers implementation is based on:
 Gao, Q., and M. Y. Zou. "An analytical solution for two and three dimensional nonlinear Burgers' equation." Applied Mathematical Modelling 45 (2017): 255-270.
 
+## install
+Requirements for conda are in the `.yml` file.
+Else, you can just directly install the package with:
+`pip install -e .` while being in the root directory of this repo.
+
 ## Burgers 1d
 ![Alt text](plots/burgers_1d.png?raw=true "Burgers 1D")
 
