@@ -1,4 +1,4 @@
-# Analyitcal solutions to Burgers Equation in 1d and 2d over time
+# Analytical solutions to time-dependent Burgers Equation in 1D and 2D
 Analytical burgers equation in 1d and 2d over time. 
 Also contains analytical solution fundamental heat equation and fokkerplanck equation in 3d.
 
